@@ -11,7 +11,7 @@
 		<interceptors>
 			<!-- 注册拦截器 -->
 			<interceptor name="BOSLoginInterceptor"
-				class="ycc.bdqn.bao.web.intercepter.MyInteceper">
+				class="ycc.mb.bao.web.intercepter.MyInteceper">
 				<param name="excludeMethods">login</param>
 			</interceptor>
 			<!-- 拦截器栈 -->

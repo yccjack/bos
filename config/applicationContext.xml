@@ -40,7 +40,7 @@
 		<!-- 注入Hibernate的映射文件 -->
 		<property name="mappingDirectoryLocations">
 			<list>
-				<value>classpath:ycc/bdqn/bao/domain</value>
+				<value>classpath:ycc/mb/bao/domain</value>
 			</list>
 			
 		</property>
@@ -52,7 +52,7 @@
 	</bean>
 	
 	<!-- 组件扫描 -->
-	<context:component-scan base-package="ycc.bdqn.bao"/>
+	<context:component-scan base-package="ycc.mb.bao"/>
 	<!-- 引入注解解析器 -->
 	<context:annotation-config/>
 	<!-- 事务注解 -->
@@ -61,7 +61,7 @@
 	<!-- 配置远程服务的代理对象 -->
 	<bean id="customerService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
 		<!-- 注入接口类型 -->
-		<property name="serviceInterface" value="ycc.bdqn.bao.crm.CustomerService"/>
+		<property name="serviceInterface" value="ycc.mb.bao.crm.CustomerService"/>
 		<!-- 服务访问路径 -->
 		<property name="serviceUrl" value="http://localhost:8080/crm/remoting/customer"/>
 	</bean>
@@ -91,7 +91,7 @@
 		</property>
 	</bean>
 <!-- 注册自定义realm -->
-	<bean id="bosRealm" class="ycc.bdqn.bao.shiro.BaoRealm"></bean>
+	<bean id="bosRealm" class="ycc.mb.bao.shiro.BaoRealm"></bean>
 	
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<!-- 注入上面的realm -->
